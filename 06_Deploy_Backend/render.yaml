@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: fullstack-workshop
+    runtime: docker
+    branch: master
+    region: virginia
+    plan: free
+    rootDir: ./02_Backend_SpringBoot
+    dockerfilePath: ./Dockerfile
+    healthCheckPath: /api/todos/health
+    envVars:
+      - key: SERVER_PORT
+        value: 10000
+      - key: SPRING_PROFILES_ACTIVE
+        value: prod
